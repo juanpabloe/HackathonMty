@@ -3,3 +3,7 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
+.DS_Store
+stylesheets/.DS_Store
+Hackathon-ACM.esproj/Project.espressostorage
+Hackathon-ACM.esproj/user.mikeruby.espressostorage/*
