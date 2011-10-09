@@ -258,3 +258,27 @@ dl dd {
 
 /* @end */
 
+/* @group buttons */
+
+.button {
+	height: 30px;
+}
+
+.button a {
+	height: 30px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+/*	background-color: rgba(239, 239, 239, 1);*/
+	-webkit-gradient(linear, 0% 0%, 0% 100%, from(#C0C0C0), to(#A1A1A1))
+	-moz-linear-gradient(100% 100% 90deg,#A1A1A1, #C0C0C0)
+}
+
+.top_register {
+	display: inline;
+	position: absolute;
+	top: 226px;
+	left: 446px;
+}
+
+/* @end */
