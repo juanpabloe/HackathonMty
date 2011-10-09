@@ -126,37 +126,41 @@
     </section>
   </div><!-- End of .left -->
   <div class="right">
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-    <script>
-      new TWTR.Widget({
-        version: 2,
-        type: 'profile',
-        rpp: 10,
-        interval: 30000,
-        width: 250,
-        height: 400,
-        theme: {
-          shell: {
-            background: '#333333',
-            color: '#ffffff'
+    <div class="widget twitter">
+      <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+      <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 10,
+          interval: 30000,
+          width: 250,
+          height: 400,
+          theme: {
+            shell: {
+              background: '#333333',
+              color: '#ffffff'
+            },
+            tweets: {
+              background: '#000000',
+              color: '#ffffff',
+              links: '#7eadf2'
+            }
           },
-          tweets: {
-            background: '#000000',
-            color: '#ffffff',
-            links: '#7eadf2'
+          features: {
+            scrollbar: true,
+            loop: false,
+            live: false,
+            hashtags: true,
+            timestamp: true,
+            avatars: true,
+            behavior: 'all'
           }
-        },
-        features: {
-          scrollbar: true,
-          loop: false,
-          live: false,
-          hashtags: true,
-          timestamp: true,
-          avatars: true,
-          behavior: 'all'
-        }
-      }).render().setUser('HackathonMty').start();
-    </script>
+        }).render().setUser('HackathonMty').start();
+      </script>
+    </div>
+    <%= render :partial => 'shared/sponsors' %>
+    <%= render :partial => 'shared/organizers' %>
   </div><!-- End of .right -->  
 </div><!-- End of #wrapper -->
 
