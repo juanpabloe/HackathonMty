@@ -11,7 +11,6 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-  # Pretty printed test output
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'turn', :require => false
