@@ -2,46 +2,18 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-
-    respond_to do |format|
-      format.html 
-      format.json { render json: @teams }
-    end
   end
 
   def show
-    @team = Team.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @team }
-    end
-  end
-
-  def new
-    @team = Team.new
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @team }
-    end
-  end
-
-  def edit
     @team = Team.find(params[:id])
   end
 
   def create
     @team = Team.new(params[:team])
-
-    respond_to do |format|
-      if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
-        format.json { render json: @team, status: :created, location: @team }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @team.errors, status: :unprocessable_entity }
-      end
+    if @team.save
+      redirect_to root_path, :notice => "El equipo #{@team.name} fue dado de alta, recibiran un correo pronto."
+    else
+      flash.now[:error] = "#{@team.errors.full_messages.join ','}"
     end
   end
 

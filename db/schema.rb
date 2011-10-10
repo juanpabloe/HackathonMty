@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009212600) do
+ActiveRecord::Schema.define(:version => 20111010002202) do
 
   create_table "teams", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20111009212600) do
     t.text     "project_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "member1_name"
+    t.string   "member1_email"
+    t.string   "member2_name"
+    t.string   "member2_email"
+    t.string   "member3_name"
+    t.string   "member3_email"
+    t.string   "member4_name"
+    t.string   "member4_email"
   end
 
 end
