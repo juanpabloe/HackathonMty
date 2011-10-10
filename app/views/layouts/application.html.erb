@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ACM Monterrey Hackathon 2011</title>
+  <title><%= content_for?(:title) ? yield(:title) : "ACM Monterrey Hackathon 2011" %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
