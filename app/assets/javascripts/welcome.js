@@ -2,9 +2,8 @@ $(document).ready(function() {
   
   $("a#register_team").fancybox({
     'autoDimensions':  false,
-    'height'        :   '500',
-    'overlayShow'   :   true,
-    'overlayColor'  :   '#333'
+    'height'        : '550',
+    'width'         : '600'
   });
 
 });

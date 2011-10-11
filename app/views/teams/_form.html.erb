@@ -11,44 +11,30 @@
         </ul>
       </div>
     <% end %>
-    <div class="field">
-      <%= f.label "Nombre del equipo" %><br />
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label "Nombre del proyecto" %><br />
-      <%= f.text_field :project_name %>
-    </div>
-    <div class="field">
-      <%= f.label "Descripción de la idea" %><br />
-      <%= f.text_area :project_description %>
-    </div>
+    <h2>Registrar idea e integrantes de equipo</h2>
+    <fieldset id="team_details">
+      <%= f.text_field :name, :placeholder => "Nombre del equipo" %>
+      <%= f.text_field :project_name , :placeholder =>"Nombre del proyecto"%>
+      <%= f.text_area :project_description, :placeholder =>"Describe el proyecto" %>
     <%= f.fields_for :members do |m| %>
-      <%= m.label "Nombre integrante 1" %><br />
-      <%= m.text_field :name %><br />
-      <%= m.label "Email integrante 1" %><br />
-      <%= m.text_field :email %><br />
+      <%= m.text_field :name, :placeholder => "Líder del equipo "%><br />
+      <%= m.text_field :email, :placeholder => "Email del líder"%><br />
+    <% end %>
+    </fieldset>
+    <fieldset id="members_details">
+        <%= f.fields_for :members do |m| %>
+      <%= m.text_field :name, :placeholder => "Nombre integrante 2"%><br />
+      <%= m.text_field :email, :placeholder => "Email integrante 2"%><br />
     <% end %>
     <%= f.fields_for :members do |m| %>
-      <%= m.label "Nombre integrante 2" %><br />
-      <%= m.text_field :name %><br />
-      <%= m.label "Email integrante 2" %><br />
-      <%= m.text_field :email %><br />
+      <%= m.text_field :name, :placeholder => "Nombre integrante 3"%><br />
+      <%= m.text_field :email, :placeholder => "Email integrante 3"%><br />
     <% end %>
     <%= f.fields_for :members do |m| %>
-      <%= m.label "Nombre integrante 3" %><br />
-      <%= m.text_field :name %><br />
-      <%= m.label "Email integrante 3" %><br />
-      <%= m.text_field :email %><br />
+      <%= m.text_field :name, :placeholder => "Nombre integrante 4"%><br />
+      <%= m.text_field :email, :placeholder => "Email integrante 4"%><br />
     <% end %>
-    <%= f.fields_for :members do |m| %>
-      <%= m.label "Nombre integrante 4" %><br />
-      <%= m.text_field :name %><br />
-      <%= m.label "Email integrante 4" %><br />
-      <%= m.text_field :email %><br />
-    <% end %>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+    </fieldset>
+    <%= f.submit "Registrar equipo", :class => "submit" %>
   <% end %>
 </div></div>
