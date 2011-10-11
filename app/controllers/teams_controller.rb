@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(params[:team])
     if @team.save
-      redirect_to root_path, :notice => "El equipo #{@team.name} fue dado de alta, recibiran un correo pronto."
+      redirect_to root_path, :notice => "Bienvenidos a Hackathon! El equipo #{@team.name} fue dado de alta, recibiran un correo en el transcurso del dia."
     else
       flash.now[:error] = "#{@team.errors.full_messages.join ','}"
     end

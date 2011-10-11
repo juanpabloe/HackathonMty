@@ -12,9 +12,11 @@
   <link rel="shortcut icon" href="public/favicon.ico" />
 </head>
 <body>
-
-<%= yield %>
-
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+  <%= content_tag :h1, yield(:title) if show_title? %>
+  <%= yield %>
 <footer>
 <p>ACM Monterrey - 2011</p>
 </footer>
