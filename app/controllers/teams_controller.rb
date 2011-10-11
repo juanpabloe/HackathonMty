@@ -4,10 +4,6 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
 
-  def show
-    @team = Team.find(params[:id])
-  end
-
   def create
     @team = Team.new(params[:team])
     if @team.save
@@ -31,13 +27,4 @@ class TeamsController < ApplicationController
     end
   end
 
-  def destroy
-    @team = Team.find(params[:id])
-    @team.destroy
-
-    respond_to do |format|
-      format.html { redirect_to teams_url }
-      format.json { head :ok }
-    end
-  end
 end

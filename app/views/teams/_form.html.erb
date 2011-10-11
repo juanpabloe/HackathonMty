@@ -11,7 +11,6 @@
         </ul>
       </div>
     <% end %>
-
     <div class="field">
       <%= f.label "Nombre del equipo" %><br />
       <%= f.text_field :name %>
@@ -24,38 +23,30 @@
       <%= f.label "Descripción de la idea" %><br />
       <%= f.text_area :project_description %>
     </div>
-    <div class="field">
-      <%= f.label "Nombre integrante 1" %><br />
-      <%= f.text_field :member1_name %>
-    </div>
-    <div class="field">
-      <%= f.label "Email integrante 1" %><br />
-      <%= f.text_field :member1_email %>
-    </div>
-    <div class="field">
-      <%= f.label "Nombre integrante 2" %><br />
-      <%= f.text_field :member2_name %>
-    </div>
-    <div class="field">
-      <%= f.label "Email integrante 2" %><br />
-      <%= f.text_field :member2_email %>
-    </div>
-    <div class="field">
-      <%= f.label "Nombre integrante 3" %><br />
-      <%= f.text_field :member3_name %>
-    </div>
-    <div class="field">
-      <%= f.label "Email integrante 3" %><br />
-      <%= f.text_field :member3_email %>
-    </div>
-    <div class="field">
-      <%= f.label "Nombre integrante 4" %><br />
-      <%= f.text_field :member4_name %>
-    </div>
-    <div class="field">
-      <%= f.label "Email integrante 4" %><br />
-      <%= f.text_field :member4_email %>
-    </div>
+    <%= f.fields_for :members do |m| %>
+      <%= m.label "Nombre integrante 1" %><br />
+      <%= m.text_field :name %><br />
+      <%= m.label "Email integrante 1" %><br />
+      <%= m.text_field :email %><br />
+    <% end %>
+    <%= f.fields_for :members do |m| %>
+      <%= m.label "Nombre integrante 2" %><br />
+      <%= m.text_field :name %><br />
+      <%= m.label "Email integrante 2" %><br />
+      <%= m.text_field :email %><br />
+    <% end %>
+    <%= f.fields_for :members do |m| %>
+      <%= m.label "Nombre integrante 3" %><br />
+      <%= m.text_field :name %><br />
+      <%= m.label "Email integrante 3" %><br />
+      <%= m.text_field :email %><br />
+    <% end %>
+    <%= f.fields_for :members do |m| %>
+      <%= m.label "Nombre integrante 4" %><br />
+      <%= m.text_field :name %><br />
+      <%= m.label "Email integrante 4" %><br />
+      <%= m.text_field :email %><br />
+    <% end %>
     <div class="actions">
       <%= f.submit %>
     </div>
