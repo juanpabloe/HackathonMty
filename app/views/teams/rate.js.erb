@@ -1,0 +1,6 @@
+<% if params['dimension'][0] > 'n'%>
+    $("#ajaxful_rating_no-small_<%= params['dimension']%>_team_<%= @team.id%>").html("<%= escape_javascript(ratings_for @team,:dimension => params['dimension'].intern, :show_user_rating => true ) %>");
+<%else%>
+    $("#ajaxful_rating_<%= params['dimension']%>_no-small_team_<%= @team.id%>").html("<%= escape_javascript(ratings_for @team,:dimension => params['dimension'].intern, :show_user_rating => true ) %>");
+<%end%>
+

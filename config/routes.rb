@@ -8,6 +8,9 @@ HackathonACM::Application.routes.draw do
     collection do
       get 'ratings'
     end
+    member do
+      post 'rate'
+    end
   end
 
   get "welcome/index"

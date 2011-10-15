@@ -1,6 +1,8 @@
 class Team < ActiveRecord::Base
-
+  DIMENSIONS = [:consistencia, :portabilidad, :originalidad, :usabilidad, :potencial, :integrabilidad]
   has_many :members
+  ajaxful_rateable :stars => 5, :dimensions => DIMENSIONS , :allow_update => true
+  
 
   attr_accessible :name, :project_description, :project_name, :members_attributes
 

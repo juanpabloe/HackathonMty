@@ -32,4 +32,9 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
 
+  def rate
+    @team = Team.find(params[:id])
+    @team.rate(params[:stars], current_member, params[:dimension])
+  end
+
 end
