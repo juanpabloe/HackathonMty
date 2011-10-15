@@ -75,7 +75,23 @@ p {
 	line-height: 22px;
 	font-size: 18px;
 }
+#top_menu{
+  float:right;
+  margin-right:20px;
+}
+#top_menu ul li{
+  display:inline;
+  list-style:none;
+}
 
+#accordion .right_bar{
+  float:right;
+  width:400px;
+}
+#accordion li{
+  display:inline;
+  list-style:none;
+}
 section {
 	margin-bottom: 40px;
 	width: 690px;
@@ -99,6 +115,11 @@ section header h1 {
 	display: inline-block;
 }
 
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
 /*section header h1:after {
 	content: "»";
     margin-left: -48px;

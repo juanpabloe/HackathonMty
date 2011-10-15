@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011040540) do
+ActiveRecord::Schema.define(:version => 20111015155113) do
 
   create_table "members", :force => true do |t|
     t.string   "name"
@@ -19,7 +19,19 @@ ActiveRecord::Schema.define(:version => 20111011040540) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "team_id"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "encrypted_password"
+    t.string   "password_salt"
   end
+
+  add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
 
   create_table "teams", :force => true do |t|
     t.string   "name"

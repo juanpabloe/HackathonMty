@@ -1,0 +1,18 @@
+<script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+</script>
+<div id='accordion'>
+  <% @teams.each do |team|%>
+    <h3> <%= link_to team.name, '#'%> </h3>
+    <div>
+      <div class='right_bar'>
+        <h3><%= team.project_name%></h3>
+        <p><%= team.project_description%></p>
+      </div>
+      <%= team.members.map(&:name).join(', ') %>
+    </div>
+    <div class='clear'>
+  <%end%>
+  </div>
