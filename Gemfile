@@ -20,7 +20,7 @@ group :development, :test do
   gem 'turn', :require => false
 end
 
-group :production do
+group :production, :staging do
   gem 'therubyracer'
   gem 'pg'
 end
