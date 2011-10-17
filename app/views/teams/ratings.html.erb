@@ -19,7 +19,15 @@
         <%= dimension.capitalize%>
         </p>
       <%end%>
-    <div class='clear'></div>
+      <% if current_member.admin?%>
+        <% Team::DIMENSIONS_ADMIN.each do |dimension|%>
+          <p>
+          <%= ratings_for team , :dimension => "#{dimension}", :show_user_rating => true  %>
+          <%= dimension.capitalize%>
+          </p>
+        <%end%>
+      <%end%>
+      <div class='clear'></div>
     </div>
   <%end%>
 </div>

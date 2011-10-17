@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
-
+  # load_and_authorize_resource
+  
   def index
     @teams = Team.all
   end
@@ -35,6 +36,10 @@ class TeamsController < ApplicationController
   def rate
     @team = Team.find(params[:id])
     @team.rate(params[:stars], current_member, params[:dimension])
+  end
+
+  def results
+    @teams = Team.all
   end
 
 end

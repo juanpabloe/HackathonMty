@@ -7,6 +7,7 @@ HackathonACM::Application.routes.draw do
   resources :teams do
     collection do
       get 'ratings'
+      get 'results'
     end
     member do
       post 'rate'
