@@ -131,36 +131,36 @@
   <div class="right">
     <div class="widget twitter">
       <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-      <script>
-        new TWTR.Widget({
-          version: 2,
-          type: 'profile',
-          rpp: 10,
-          interval: 30000,
-          width: 250,
-          height: 400,
-          theme: {
-            shell: {
-              background: '#333333',
-              color: '#ffffff'
-            },
-            tweets: {
-              background: '#000000',
-              color: '#ffffff',
-              links: '#7eadf2'
-            }
-          },
-          features: {
-            scrollbar: true,
-            loop: false,
-            live: false,
-            hashtags: true,
-            timestamp: true,
-            avatars: true,
-            behavior: 'all'
-          }
-        }).render().setUser('HackathonMty').start();
-      </script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: 'hackathonmty',
+  interval: 30000,
+  title: 'ACM Monterrey',
+  subject: 'Hackathon 2011',
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#292929',
+      color: '#d1d1d1',
+      links: '#3698c2'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+
     </div>
     <%= render :partial => 'shared/sponsors' %>
     <%= render :partial => 'shared/organizers' %>
