@@ -40,51 +40,8 @@
       <p>Apurate a registrar tu equipo porque tenemos <span class="note">&iexcl;l&iacute;mite de 15 equipos!</strong></p>
     </div>
     </section>
-    <section class="agenda">
-    <header>
-    <h1>Agenda</h1>
-    </header>
-    <div class="content">
-      <table>
-        <tr>
-          <th colspan="3"><h2>S&aacute;bado, 22 de octubre</h2></th>
-        </tr>
-        <tr>
-          <td>14:00 - 15:00</td>
-          <td>Presentaci&oacute;n de ideas</td>
-        </tr>
-        <tr>
-          <td>15:00 - 21:00</td>
-          <td>&iexcl;Hacking!</td>
-        </tr>
-        <tr>
-          <td>21:00 - 22:00</td>
-          <td>Cena</td>
-        </tr>
-        <tr>
-          <td>22:00 - 10:00</td>
-          <td>Late nite coding</td>
-        </tr>
-      </table>
-      <table>
-        <tr>
-          <th colspan="3"><h2>Domingo, 23 de octubre</h2></th>
-        </tr>
-        <tr>
-          <td>10:00 - 11:00</td>
-          <td>Desayuno</td>
-        </tr>
-        <tr>
-          <td>12:00 - 17:00</td>
-          <td>Code</td>
-        </tr>
-        <tr>
-          <td>17:00 - 18:00</td>
-          <td>Presentaciones finales</td>
-        </tr>
-      </table>
-    </div>
-    </section>
+    <%= render "agenda" %>
+
     <%= render :partial => 'teams/form' %>
     <p></p>
     <section class="rules">
@@ -93,13 +50,14 @@
     </header>
     <div class="content">
       <ul>
-        <li>Un integrante del equipo tendr&aacute; que registrar la llegada del equipo el d&iacute;a del evento antes de las 14:00 hrs. 
-        <li>El equipo completo tendr&aacute; que estar en la sala 1 del centro estudiantil antes de las 14:00 hrs.</li>
-        <li>Las aplicaciones no deben de estar en fase de desarrollo antes del inicio del evento pero se permite el uso de bibliotecas pre-existentes.</li>
-        <li>Se espera que los participantes traigan consigo las herramientas y software necesario para desarrollar sus aplicaciones.</li>
+        <li>Un integrante del equipo tendr&aacute; que registrar la llegada del equipo el d&iacute;a del evento antes de las 15:00 hrs. 
+        <li>El equipo completo tendr&aacute; que estar en la sala 1 de aulas 6 antes de las 15:10 hrs.</li>
+        <li>Las aplicaciones no deben de estar en fase de desarrollo antes del inicio del evento pero se permite el uso de APIs all the way.</li>
+        <li>Se espera que tengas contigo las herrramientas y software necesario para desarrollar tu proyecto, no llegues a apenas a instalar ambientes!.</li>
       </ul>
     </div>
     </section>
+
     <section class="faq">
     <header>
     <h1>FAQ</h1>

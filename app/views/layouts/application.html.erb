@@ -14,14 +14,6 @@
 </head>
 <body>
   <div id='top_menu'>
-    <ul>
-    <% if current_member %>
-      <li><%= link_to 'Resultados', results_teams_path %></li> | 
-      <li><%= link_to 'Calificar equipos', ratings_teams_path %></li> | 
-      <li><%= link_to 'Cerrar Sesión', destroy_member_session_path, :method => :delete %></li>
-    <% else%>
-      <li><%= link_to 'Iniciar Sesión', new_member_session_path %></li>
-    <%end%>
   </div>
   <div class='clear'></div>
   <% flash.each do |name, msg| %>
