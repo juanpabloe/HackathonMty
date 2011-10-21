@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui-1.8.16.custom.min
 //= require jquery.easing-1.3.pack
 //= require jquery.fancybox-1.3.4
 //= require jquery.mousewheel-3.0.4.pack

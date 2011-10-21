@@ -1,0 +1,17 @@
+<table id='results'>
+  <tr>
+    <td>Nombre</td>
+    <td>Promedio</td>
+    <% Team::FULL_DIMENSIONS.each do |dimension|%>
+      <td> <%= dimension.capitalize%> </td>
+    <%end%>
+  </tr>
+  <% @teams.each do |team|%>
+    <tr>
+      <td><%= team.name%></td><td><%= team.total_rate_average.nan? ? "Pendiente" : team.total_rate_average.round(2)%></td>
+      <% (Team::FULL_DIMENSIONS).each do |dimension|%>
+        <td><%= ratings_for team,:static, :dimension => "#{dimension}", :small => true%></td>
+      <% end %>
+    </tr>
+  <%end%>
+</table>

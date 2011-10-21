@@ -1,11 +1,13 @@
 class TeamsController < ApplicationController
-
+  # load_and_authorize_resource
+  
   def index
     @teams = Team.all
   end
 
   def create
     @team = Team.new(params[:team])
+    @team.rescue_members
     if @team.save
       redirect_to root_path, :notice => "Bienvenidos a Hackathon! El equipo #{@team.name} fue dado de alta, recibiran un correo en el transcurso del dia."
     else
@@ -25,6 +27,19 @@ class TeamsController < ApplicationController
         format.json { render json: @team.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def ratings
+    @teams = Team.all
+  end
+
+  def rate
+    @team = Team.find(params[:id])
+    @team.rate(params[:stars], current_member, params[:dimension])
+  end
+
+  def results
+    @teams = Team.all
   end
 
 end

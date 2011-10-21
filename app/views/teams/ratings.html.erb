@@ -1,0 +1,33 @@
+<script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+</script>
+<div id='accordion'>
+  <% @teams.each do |team|%>
+    <h3> <%= link_to team.name, '#'%> </h3>
+    <div>
+
+      <div class='right_bar'>
+        <h3><%= team.project_name%></h3>
+        <p><%= team.project_description%></p>
+      </div>
+      <%= team.members.map(&:name).join(', ') %>
+      <% Team::DIMENSIONS.each do |dimension|%>
+        <p>
+        <%= ratings_for team , :dimension => "#{dimension}", :show_user_rating => true  %>
+        <%= dimension.capitalize%>
+        </p>
+      <%end%>
+      <% if current_member.admin?%>
+        <% Team::DIMENSIONS_ADMIN.each do |dimension|%>
+          <p>
+          <%= ratings_for team , :dimension => "#{dimension}", :show_user_rating => true  %>
+          <%= dimension.capitalize%>
+          </p>
+        <%end%>
+      <%end%>
+      <div class='clear'></div>
+    </div>
+  <%end%>
+</div>
