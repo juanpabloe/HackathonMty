@@ -3,7 +3,7 @@ class Team < ActiveRecord::Base
   DIMENSIONS_ADMIN = [:consistencia, :potencial, :integrabilidad]
   FULL_DIMENSIONS = DIMENSIONS + DIMENSIONS_ADMIN
 
-  has_many :members
+  has_many :members, :dependent => :destroy
   ajaxful_rateable :stars => 5, :dimensions => FULL_DIMENSIONS, :allow_update => true
   
 
@@ -21,8 +21,8 @@ class Team < ActiveRecord::Base
       if member.name.blank? and member.email.blank?
         member.delete
       else
-        member.password = 'secret'
-        member.password_confirmation = 'secret'
+        member.password = "hackathon#{member.email.gsub(/@.*/,'')}"
+        member.password_confirmation = "hackathon#{member.email.gsub(/@.*/,'')}"
       end
     end
   end
