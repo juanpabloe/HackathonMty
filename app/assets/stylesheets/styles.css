@@ -291,6 +291,13 @@ dl dd {
 	margin-bottom: 20px;
 }
 
+img#nic {
+  background-color: white;
+  margin-top: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
 .widget h3 {
 	margin-top: 5px;
 	margin-bottom: 9px;
